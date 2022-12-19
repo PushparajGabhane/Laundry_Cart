@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
-    Product_Type: { type: String, required: true },
-    Quantity:{type:Number,required:true},
-    Wash_Type:{type:String,required:true},
-    Price:{type:Number,required:true}
+    productType: { type: String, required: true },
+    quantity:{type:Number,required:true},
+    washType:{type:String,required:true},
+    price:{type:Number,required:true},
+    status:{type:String}
 }, { timestamps: true });
 
 const orderModel = mongoose.model("order", orderSchema);
