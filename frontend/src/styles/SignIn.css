@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.signIn {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.headerSection {
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 2px 48px #0000000F;
+    opacity: 1;
+}
+
+.header {
+    top: 30px;
+    left: 119px;
+    width: 108px;
+    height: 27px;
+    font-weight: bolder;
+    letter-spacing: 1.8px;
+    color: #5861AE;
+    text-transform: uppercase;
+    opacity: 1;
+    margin: 27px 0 0 10vw;
+}
+
+.buttons {
+    margin-left: 52.45vw;
+}
+
+.buttons button {
+    background-color: #FFFFFF;
+    width: 113px;
+    height: 80px;
+    border: 0.5px solid rgb(121, 119, 119);
+    color: #565657;
+}
+
+/* Body section starts here */
+
+.bodySection {
+    display: flex;
+    flex-direction: row;
+}
+
+.leftBodySection {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.leftBodySection .laundry {
+    width: 20vw;
+    font-size: 5rem;
+    color: #5861AE;
+    font-weight: bolder;
+    padding: 0;
+    /* border: 2px solid black; */
+    margin: 10vh 0 0 80px;
+}
+
+.leftBodySection .service {
+    width: 20vw;
+    font-size: 5rem;
+    color: #5861AE;
+    font-weight: bolder;
+    /* border: 2px solid black; */
+    margin-left: 70px;
+}
+
+.leftBodySection .serviceWork {
+    width: 20vw;
+    color: #565657;
+    letter-spacing: 0.8px;
+    /* border: 2px solid black; */
+    margin: 5vh 0 0 70px;
+}
+
+.leftBodySection .noAccount {
+    width: 10vw;
+    letter-spacing: 0.64px;
+    color: #565657;
+    height: 22px;
+    font-size: 0.7rem;
+    margin: 5vh 0 0 82px;
+    /* border: 2px solid black; */
+}
+
+.leftBodySection_Register {
+    width: 10vw;
+    height: 50px;
+    border: 2px solid #4552C1;
+    border-radius: 4px;
+    opacity: 1;
+    margin: 1vh 0 15vh 90px;
+}
+/* Right section starts here */
+.rightBodySection {
+    width: 50vw;
+    background-color: #B9C0FD1A;
+    display: flex;
+    flex-direction: column;
+    padding: 10vh 0 5vh 75px;
+}
+
+.rightBodySection_signIn {
+    width: 10vw;
+    letter-spacing: 1.28px;
+    color: #4552C1;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 10px 0 7vh 0;
+}
+
+input[type=text]{
+    font-size: 1.1rem;
+    padding: 5px;
+    width: 20vw;
+    border: 0;
+    border-bottom: 1px solid #565657;
+    background-color: #B9C0FD1A;
+    margin-bottom: 5vh;
+}
+input[type=password]{
+    height: 3vh;
+    width: 20vw;
+    border: 0;
+    border-bottom: 1px solid #676769;
+    background-color: #B9C0FD1A;
+}
