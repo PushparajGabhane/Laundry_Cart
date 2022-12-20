@@ -35,12 +35,22 @@
     margin-left: 52.45vw;
 }
 
-.buttons button {
+.buttons .same {
     background-color: #FFFFFF;
     width: 113px;
     height: 80px;
     border: 0.5px solid rgb(121, 119, 119);
     color: #565657;
+    font-size: 1.05rem;
+}
+
+.headerSection_signIn {
+    background-color: #4552C1;
+    width: 113px;
+    height: 80px;
+    border: 0.5px solid rgb(121, 119, 119);
+    color: #FFFFFF;
+    font-size: 1.05rem;
 }
 
 /* Body section starts here */
@@ -84,12 +94,12 @@
 }
 
 .leftBodySection .noAccount {
-    width: 10vw;
+    width: 15vw;
     letter-spacing: 0.64px;
     color: #565657;
     height: 22px;
-    font-size: 0.7rem;
-    margin: 5vh 0 0 82px;
+    font-size: 15px;
+    margin: 5vh 0 0 62px;
     /* border: 2px solid black; */
 }
 
@@ -122,26 +132,31 @@
 
 input[type=text] {
     font-size: 1.1rem;
-    padding: 5px;
+    padding: 8px;
     width: 20vw;
     border: 0;
     border-bottom: 1px solid #565657;
     background-color: #B9C0FD1A;
     margin-bottom: 5vh;
+    letter-spacing: 1.5px;
 }
 
 input[type=password] {
-    height: 3vh;
+    font-size: 1.1rem;
+    padding: 8px;
     width: 20vw;
     border: 0;
     border-bottom: 1px solid #676769;
     background-color: #B9C0FD1A;
+    letter-spacing: 1.5px;
 }
-.forgetPassword{
+
+.forgetPassword {
     color: #4552C1;
     width: 10vw;
     margin: 2vh 0 0 15vw;
 }
+
 .rightBodySection button {
     width: 7vw;
     height: auto;
@@ -233,4 +248,16 @@ h3 {
 
 .socialMediaIcons img {
     margin: 1vh 1vw 1vh 0;
+}
+
+.footerDate {
+    width: 100vw;
+    height: 5vh;
+    background-color: #182838;
+}
+.footerDate h3{
+    display: flex;
+    flex-direction: row;
+    color: #707070;
+    margin: 0.5vh 0 0 40vw;
 }
