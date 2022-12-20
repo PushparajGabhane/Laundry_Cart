@@ -255,7 +255,8 @@ h3 {
     height: 5vh;
     background-color: #182838;
 }
-.footerDate h3{
+
+.footerDate h3 {
     display: flex;
     flex-direction: row;
     color: #707070;
