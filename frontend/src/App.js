@@ -1,9 +1,10 @@
 import './App.css';
+import SignIn from './components/SignIn';
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to Laundry Cart</h1>
+      <SignIn/>
     </div>
   );
 }
