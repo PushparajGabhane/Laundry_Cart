@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-    Name: { type: String, required: true },
-    Email: { type: String, required: true, unique: true },
-    Phone: { type: Number, required: true, unique: true },
-    State: { type: String, required: true },
-    District: { type: String, required: true },
-    Address: { type: String, required: true },
-    Pincode: { type: String, required: true },
-    Password: { type: String, required: true },
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    phone: { type: Number, required: true, unique: true },
+    state: { type: String, required: true },
+    district: { type: String, required: true },
+    address: { type: String, required: true },
+    pincode: { type: String, required: true },
+    password: { type: String, required: true },
 }, { timestamps: true });
 
 const userModel = mongoose.model("user", userSchema);
