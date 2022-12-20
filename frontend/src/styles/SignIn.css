@@ -101,6 +101,7 @@
     opacity: 1;
     margin: 1vh 0 15vh 90px;
 }
+
 /* Right section starts here */
 .rightBodySection {
     width: 50vw;
@@ -119,7 +120,7 @@
     margin: 10px 0 7vh 0;
 }
 
-input[type=text]{
+input[type=text] {
     font-size: 1.1rem;
     padding: 5px;
     width: 20vw;
@@ -128,10 +129,108 @@ input[type=text]{
     background-color: #B9C0FD1A;
     margin-bottom: 5vh;
 }
-input[type=password]{
+
+input[type=password] {
     height: 3vh;
     width: 20vw;
     border: 0;
     border-bottom: 1px solid #676769;
     background-color: #B9C0FD1A;
+}
+.forgetPassword{
+    color: #4552C1;
+    width: 10vw;
+    margin: 2vh 0 0 15vw;
+}
+.rightBodySection button {
+    width: 7vw;
+    height: auto;
+    background-color: #4552C1;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 4px;
+    opacity: 1;
+    font-size: 1.2rem;
+    padding: 1vh 0;
+    margin: 14vh 0 0 10vw;
+}
+
+/* bottom serction starts here */
+
+.referSection {
+    width: 100vw;
+    height: auto;
+    border-top: 2.5px solid #5861AE;
+    background-color: #F8F9FF;
+    box-shadow: 0px -3px 6px #0000000B;
+    opacity: 1;
+}
+
+.referSection .referal {
+    letter-spacing: 0.96px;
+    color: #5861AE;
+    opacity: 1;
+    font-size: 1.5rem;
+    margin: 1vh 0;
+}
+
+.referSection .terms {
+    font-size: 0.7rem;
+    margin-bottom: 1vh;
+}
+
+.aboutUs {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    padding-top: 2vh;
+    background-image: url('../asset/Footer.svg');
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+}
+
+h3 {
+    color: #182838;
+}
+
+.about_us {
+    width: 16vw;
+}
+
+.about_us p {
+    font-size: 0.75rem;
+    margin: 1vh 0 0 0;
+}
+
+.home {
+    width: 16vw;
+}
+
+.home p {
+    font-size: 0.75rem;
+    margin: 1vh 0 0 0;
+}
+
+.pricing {
+    width: 16vw;
+}
+
+.career {
+    width: 16vw;
+}
+
+.contact {
+    width: 16vw;
+}
+
+.social_media {
+    width: 16vw;
+}
+
+.socialMediaIcons img {
+    margin: 1vh 1vw 1vh 0;
 }

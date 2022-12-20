@@ -2,7 +2,6 @@ import '../styles/SignIn.css';
 import facebook from "../asset/facebook.svg";
 import instagram from "../asset/instagram.svg";
 import linkedin from "../asset/linkedin.svg";
-// import footer from "../asset/Footer.svg";
 
 export default function SignIn(){
     return (
@@ -28,38 +27,38 @@ export default function SignIn(){
                     <p className='rightBodySection_signIn'>SIGN IN</p>
                     <input type="text" placeholder='Mobile / Email' className='mobile_email'/>
                     <input type="password" placeholder='password' className='password'/>
-                    <p>Forget Password?</p>
+                    <p className='forgetPassword'>Forget Password?</p>
                     <button>Sign In</button>
                 </div>
             </section>
             <section className="bottomSection">
                     <div className="referSection">
                         <p className="referal">Now Refer & Earn <i className="fa fa-inr"> 500</i> for every refferal*</p>
-                        <p>*Terms and conditions will be applied</p>
+                        <p className='terms'>*Terms and conditions will be applied</p>
                     </div>
                     <div className="aboutUs">
                         <div className="about_us">
-                            <p>ABOUT US</p>
+                            <h3>ABOUT US</h3>
                             <p>Doorstep Wash & Dryclean Service</p>
                         </div>
                         <div className="home">
-                            <p>Home</p>
+                            <h3>Home</h3>
                             <p>Sign In</p>
                             <p>Register</p>
                         </div>
                         <div className="pricing">
-                            <p>Pricing</p>
+                            <h3>Pricing</h3>
                         </div>
                         <div className="career">
-                            <p>Career</p>
+                            <h3>Career</h3>
                             <p>Blogs</p>
                             <p>Create</p>
                         </div>
                         <div className="contact">
-                            <p>Contact</p>
+                            <h3>Contact</h3>
                         </div>
                         <div className="social_media">
-                            <p>Social Media</p>
+                            <h3>SOCIAL MEDIA</h3>
                             <div className="socialMediaIcons">
                                 <img src={facebook} alt="facebook"/>
                                 <img src={instagram} alt="instagram"/>
