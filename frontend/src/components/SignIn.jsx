@@ -3,8 +3,28 @@ import facebook from "../asset/facebook.svg";
 import instagram from "../asset/instagram.svg";
 import linkedin from "../asset/linkedin.svg";
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import Axios from 'axios';
 
 export default function SignIn() {
+    const [email_phone, setEmail_Phone] = useState('');
+    const [password, setPassword] = useState('');
+    const [form, setForm] = useState({})
+    const signInHandler = (e) => {
+        e.preventDefault();
+        form.email_phone = email_phone;
+        form.password = password;
+        setForm(form);
+        console.log(form);
+        Axios.post('/signIn', form)
+            .then((res) => {
+                console.log('Sign in succesfull',res.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
     const navigate = useNavigate();
     return (
         <div className="signIn">
@@ -23,14 +43,28 @@ export default function SignIn() {
                     <p className='service'>Service</p>
                     <p className='serviceWork'>Doorstep Wash & Dryclean service</p>
                     <p className='noAccount'>Don't Have An Account?</p>
-                    <button className='leftBodySection_Register' onClick={(e)=>{navigate('/register')}}>Register</button>
+                    <button className='leftBodySection_Register' onClick={(e) => { navigate('/register') }}>Register</button>
                 </div>
                 <div className="rightBodySection">
-                    <p className='rightBodySection_signIn'>SIGN IN</p>
-                    <input type="text" placeholder='Mobile / Email' className='mobile_email' />
-                    <input type="password" placeholder='password' className='password' />
-                    <p className='forgetPassword'>Forget Password?</p>
-                    <button>Sign In</button>
+                    <form method='/'>
+                        <p className='rightBodySection_signIn'>SIGN IN</p>
+                        <input
+                            type="text"
+                            value={email_phone}
+                            placeholder='Mobile / Email'
+                            className='mobile_email'
+                            onChange={(e) => { setEmail_Phone(e.target.value) }}
+                        />
+                        <input
+                            type="password"
+                            value={password}
+                            placeholder='password'
+                            className='password'
+                            onChange={(e) => { setPassword(e.target.value) }}
+                        />
+                        <p className='forgetPassword'>Forget Password?</p>
+                        <button onClick={(e) => signInHandler(e)}>Sign In</button>
+                    </form>
                 </div>
             </section>
             <section className="bottomSection">
