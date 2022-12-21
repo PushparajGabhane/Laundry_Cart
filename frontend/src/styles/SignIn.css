@@ -64,6 +64,7 @@
     width: 50vw;
     display: flex;
     flex-direction: column;
+    padding: 10vh 12vw 10vh 10vw;
 }
 
 .leftBodySection .laundry {
@@ -71,9 +72,6 @@
     font-size: 5rem;
     color: #5861AE;
     font-weight: bolder;
-    padding: 0;
-    /* border: 2px solid black; */
-    margin: 10vh 0 0 80px;
 }
 
 .leftBodySection .service {
@@ -81,16 +79,14 @@
     font-size: 5rem;
     color: #5861AE;
     font-weight: bolder;
-    /* border: 2px solid black; */
-    margin-left: 70px;
+    
 }
 
 .leftBodySection .serviceWork {
     width: 20vw;
     color: #565657;
     letter-spacing: 0.8px;
-    /* border: 2px solid black; */
-    margin: 5vh 0 0 70px;
+    margin: 5vh 0;
 }
 
 .leftBodySection .noAccount {
@@ -99,8 +95,7 @@
     color: #565657;
     height: 22px;
     font-size: 15px;
-    margin: 5vh 0 0 62px;
-    /* border: 2px solid black; */
+    margin-bottom: 2vh;
 }
 
 .leftBodySection_Register {
@@ -109,7 +104,8 @@
     border: 2px solid #4552C1;
     border-radius: 4px;
     opacity: 1;
-    margin: 1vh 0 15vh 90px;
+    cursor: pointer;
+    margin-bottom: 10vh;
 }
 
 /* Right section starts here */
@@ -118,7 +114,7 @@
     background-color: #B9C0FD1A;
     display: flex;
     flex-direction: column;
-    padding: 10vh 0 5vh 75px;
+    padding: 12vh 30vw 5vh 7vw;
 }
 
 .rightBodySection_signIn {
@@ -179,6 +175,7 @@ input[type=password] {
     background-color: #F8F9FF;
     box-shadow: 0px -3px 6px #0000000B;
     opacity: 1;
+    padding: 1vh 0 1vh 29vw ;
 }
 
 .referSection .referal {
@@ -191,7 +188,7 @@ input[type=password] {
 
 .referSection .terms {
     font-size: 0.7rem;
-    margin-bottom: 1vh;
+    margin:0 0 1vh 10vw;
 }
 
 .aboutUs {
@@ -199,7 +196,7 @@ input[type=password] {
     height: 20vh;
     display: flex;
     flex-direction: row;
-    padding-top: 2vh;
+    padding: 2vh 0 0 5vw;
     background-image: url('../asset/Footer.svg');
     background-position: center;
     /* Center the image */

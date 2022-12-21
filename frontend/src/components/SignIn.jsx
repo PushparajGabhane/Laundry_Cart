@@ -2,8 +2,10 @@ import '../styles/SignIn.css';
 import facebook from "../asset/facebook.svg";
 import instagram from "../asset/instagram.svg";
 import linkedin from "../asset/linkedin.svg";
+import { useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
+    const navigate = useNavigate();
     return (
         <div className="signIn">
             <section className="headerSection">
@@ -21,7 +23,7 @@ export default function SignIn() {
                     <p className='service'>Service</p>
                     <p className='serviceWork'>Doorstep Wash & Dryclean service</p>
                     <p className='noAccount'>Don't Have An Account?</p>
-                    <button className='leftBodySection_Register'>Register</button>
+                    <button className='leftBodySection_Register' onClick={(e)=>{navigate('/register')}}>Register</button>
                 </div>
                 <div className="rightBodySection">
                     <p className='rightBodySection_signIn'>SIGN IN</p>
