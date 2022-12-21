@@ -25,12 +25,13 @@ exports.signIn = async (req, res, next) => {
     try {
         const { email_phone, password } = req.body;
         let user;
-        if (email_phone['email']) {
-            user = await User.findOne({ email_phone });
-        } else if (email_phone['phone']) {
-            user = await User.findOne({ email_phone });
-        }
 
+        if (typeof email_phone === 'string') {
+            user = await User.findOne({ email: email_phone });
+        } else if (typeof email_phone === 'number') {
+            user = await User.findOne({ phone: email_phone });
+        }
+        // console.log(user);
         if (!user) {
             return res.status(401).json({
                 message: "Wrong credentials!",
@@ -39,15 +40,16 @@ exports.signIn = async (req, res, next) => {
 
         const validated = await bcrypt.compare(password, user.password);
 
-        if(!validated){
+        if (!validated) {
             return res.status(400).json({
-                message:"Password doesn't match!"
+                message: "Password doesn't match!"
             })
         }
-        const token = await jwt.sign({email_phone, _id: user.id}, process.env.PRIVATE_KEY, {expiresIn: "2h"});
+        const token = await jwt.sign({ email_phone, _id: user.id }, process.env.PRIVATE_KEY, { expiresIn: "2h" });
         res.status(200).json({
-            message:"Login succesfull!",
+            message: "Login succesfull!",
             token,
+            user
         })
     } catch (error) {
 

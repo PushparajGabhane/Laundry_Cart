@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     state: { type: String, required: true },
     district: { type: String, required: true },
     address: { type: String, required: true },
-    pincode: { type: String, required: true },
+    pincode: { type: Number, required: true },
     password: { type: String, required: true },
 }, { timestamps: true });
 
