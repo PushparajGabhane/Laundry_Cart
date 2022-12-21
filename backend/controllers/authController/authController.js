@@ -52,6 +52,9 @@ exports.signIn = async (req, res, next) => {
             user
         })
     } catch (error) {
-
+        res.status(401).json({
+            message:"Failure to signIn",
+            error
+        })
     }
 }
