@@ -1,0 +1,82 @@
+.table-header {
+
+    background-color: black;
+    color: aliceblue;
+
+}
+
+.table-main {
+    display: inline-block;
+    top: 0px;
+    margin-left: 60px;
+   height: 100%;
+    background-color: #E0E0E0;
+
+}
+
+.proceed {
+    background-color: rgb(11, 179, 134);
+    border-radius: 10px;
+   margin-left: 20px;
+    height: 50px;
+   width: 85px;
+}
+
+.cancel {
+    background-color: rgb(255, 255, 255);
+   
+    margin-left: 1000px;
+    border-radius: 10px;
+   height: 50px;
+   width: 85px;
+}
+
+.cancel:hover {
+    transform: scale(1.1);
+    
+
+}
+
+.proceed:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+.washlogo:hover {
+    transform: scale(1.2);
+    opacity: 1;
+
+}
+
+.washlogo {
+    cursor: pointer;
+    width: 40px;
+    margin-left: 30px;
+}
+.washlogo:active{
+    background-color: #5861AE;
+}
+
+.washselect{
+    cursor: pointer;
+    width: 40px;
+    margin-left: 30px;
+  background-color: #5861AE;
+}
+
+
+
+.footer{
+    margin-top: 70px;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: #182838;
+    color: rgb(189, 189, 189);
+    padding: 30px;
+}
+.footername{
+  
+    font-size: medium;
+    margin-left: 600px;
+}

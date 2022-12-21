@@ -1,0 +1,87 @@
+.createorder-main {
+
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 1440px;
+  height: 555px;
+  /* UI Properties */
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+
+.sidebar {
+
+  display: inline-block;
+  top: 100px;
+  position: absolute;
+  left: 0px;
+  width: 57px;
+  height: 525px;
+  /* UI Properties */
+  background: #5861AE 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+#createbutton {
+  font-style: italic;
+  align-content: center;
+  display: inline-block;
+  position: absolute;
+  top: 400px;
+  left: 250px;
+  width: 107px;
+  height: 32px;
+  /* UI Properties */
+  border: 1.5px solid #5861AE;
+  border-radius: 4px;
+  opacity: 1;
+  color: #5861AE;
+  cursor: pointer;
+}
+#createbutton:hover{
+  transform: scale(1.2);
+
+}
+
+
+
+
+.nav {
+  margin-left: 400px;
+
+}
+
+.createorder-logo {
+  text-align: left;
+  font: normal normal 900 20px/27px Avenir;
+  letter-spacing: 1.8px;
+  color: #5861AE;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.navchild {
+  top: 0px;
+  left: 1116px;
+  width: 100px;
+  height: 100%;
+  /* UI Properties */
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border: 1px solid #0000000F;
+}
+
+
+.createorder-container {
+
+  top: 0px;
+  left: 0px;
+  width: 1440px;
+  height: 80px;
+  /* UI Properties */
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 2px 48px #0000000F;
+  opacity: 1;
+}
