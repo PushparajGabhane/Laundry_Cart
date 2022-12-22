@@ -4,9 +4,9 @@ const express=require("express")
 
 const app=express()
 
-const register=require("./router/orders")
+const orders=require("./router/orders")
 
-app.use(register)
+app.use(orders)
 
 const main= async ()=>{
 
