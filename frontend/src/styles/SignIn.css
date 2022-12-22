@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.signIn {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.headerSection {
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 2px 48px #0000000F;
+    opacity: 1;
+}
+
+.header {
+    top: 30px;
+    left: 119px;
+    width: 108px;
+    height: 27px;
+    font-weight: bolder;
+    letter-spacing: 1.8px;
+    color: #5861AE;
+    text-transform: uppercase;
+    opacity: 1;
+    margin: 27px 0 0 10vw;
+}
+
+.buttons {
+    margin-left: 52.45vw;
+}
+
+.buttons .same {
+    background-color: #FFFFFF;
+    width: 113px;
+    height: 80px;
+    border: 0.5px solid rgb(121, 119, 119);
+    color: #565657;
+    font-size: 1.05rem;
+}
+
+.headerSection_signIn {
+    background-color: #4552C1;
+    width: 113px;
+    height: 80px;
+    border: 0.5px solid rgb(121, 119, 119);
+    color: #FFFFFF;
+    font-size: 1.05rem;
+}
+
+/* Body section starts here */
+
+.bodySection {
+    display: flex;
+    flex-direction: row;
+}
+
+.leftBodySection {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    padding: 10vh 12vw 10vh 10vw;
+}
+
+.leftBodySection .laundry {
+    width: 20vw;
+    font-size: 5rem;
+    color: #5861AE;
+    font-weight: bolder;
+}
+
+.leftBodySection .service {
+    width: 20vw;
+    font-size: 5rem;
+    color: #5861AE;
+    font-weight: bolder;
+    
+}
+
+.leftBodySection .serviceWork {
+    width: 20vw;
+    color: #565657;
+    letter-spacing: 0.8px;
+    margin: 5vh 0;
+}
+
+.leftBodySection .noAccount {
+    width: 15vw;
+    letter-spacing: 0.64px;
+    color: #565657;
+    height: 22px;
+    font-size: 15px;
+    margin-bottom: 2vh;
+}
+
+.leftBodySection_Register {
+    width: 10vw;
+    height: 50px;
+    border: 2px solid #4552C1;
+    border-radius: 4px;
+    opacity: 1;
+    cursor: pointer;
+    margin-bottom: 10vh;
+}
+
+/* Right section starts here */
+.rightBodySection {
+    width: 50vw;
+    background-color: #B9C0FD1A;
+    display: flex;
+    flex-direction: column;
+    padding: 12vh 30vw 5vh 7vw;
+}
+
+.rightBodySection_signIn {
+    width: 10vw;
+    letter-spacing: 1.28px;
+    color: #4552C1;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 10px 0 7vh 0;
+}
+
+input[type=text] {
+    font-size: 1.1rem;
+    padding: 8px;
+    width: 20vw;
+    border: 0;
+    border-bottom: 1px solid #565657;
+    background-color: #B9C0FD1A;
+    margin-bottom: 5vh;
+    letter-spacing: 1.5px;
+}
+
+input[type=password] {
+    font-size: 1.1rem;
+    padding: 8px;
+    width: 20vw;
+    border: 0;
+    border-bottom: 1px solid #676769;
+    background-color: #B9C0FD1A;
+    letter-spacing: 1.5px;
+}
+
+.forgetPassword {
+    color: #4552C1;
+    width: 10vw;
+    margin: 2vh 0 0 15vw;
+}
+
+.rightBodySection button {
+    width: 7vw;
+    height: auto;
+    background-color: #4552C1;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 4px;
+    opacity: 1;
+    font-size: 1.2rem;
+    padding: 1vh 0;
+    margin: 14vh 0 0 10vw;
+}
+
+/* bottom serction starts here */
+
+.referSection {
+    width: 100vw;
+    height: auto;
+    border-top: 2.5px solid #5861AE;
+    background-color: #F8F9FF;
+    box-shadow: 0px -3px 6px #0000000B;
+    opacity: 1;
+    padding: 1vh 0 1vh 29vw ;
+}
+
+.referSection .referal {
+    letter-spacing: 0.96px;
+    color: #5861AE;
+    opacity: 1;
+    font-size: 1.5rem;
+    margin: 1vh 0;
+}
+
+.referSection .terms {
+    font-size: 0.7rem;
+    margin:0 0 1vh 10vw;
+}
+
+.aboutUs {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    padding: 2vh 0 0 5vw;
+    background-image: url('../asset/Footer.svg');
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+}
+
+h3 {
+    color: #182838;
+}
+
+.about_us {
+    width: 16vw;
+}
+
+.about_us p {
+    font-size: 0.75rem;
+    margin: 1vh 0 0 0;
+}
+
+.home {
+    width: 16vw;
+}
+
+.home p {
+    font-size: 0.75rem;
+    margin: 1vh 0 0 0;
+}
+
+.pricing {
+    width: 16vw;
+}
+
+.career {
+    width: 16vw;
+}
+
+.contact {
+    width: 16vw;
+}
+
+.social_media {
+    width: 16vw;
+}
+
+.socialMediaIcons img {
+    margin: 1vh 1vw 1vh 0;
+}
+
+.footerDate {
+    width: 100vw;
+    height: 5vh;
+    background-color: #182838;
+}
+
+.footerDate h3 {
+    display: flex;
+    flex-direction: row;
+    color: #707070;
+    margin: 0.5vh 0 0 40vw;
+}
