@@ -2,12 +2,12 @@ import '../styles/SignIn.css';
 import facebook from "../asset/facebook.svg";
 import instagram from "../asset/instagram.svg";
 import linkedin from "../asset/linkedin.svg";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Axios from 'axios';
+import Profile from './profile';
 
 export default function SignIn() {
-    const [login, setLogin] = useState(false);
     const [email_phone, setEmail_Phone] = useState('');
     const [password, setPassword] = useState('');
     const [form, setForm] = useState({});
@@ -17,10 +17,9 @@ export default function SignIn() {
         form.password = password;
         setForm(form);
         console.log(form);
-        Axios.get('/signIn', form)
+        Axios.get('localhost:4000/signIn', form)
             .then((res) => {
                 console.log('Sign in succesfull', res.data);
-                setLogin(true);
             })
             .catch((err) => {
                 console.log(err)
@@ -30,6 +29,7 @@ export default function SignIn() {
     const navigate = useNavigate();
     return (
         <div className="signIn">
+            <Profile />
             <section className="headerSection">
                 <p className="header">LAUNDRY</p>
                 <div className="buttons">
@@ -65,7 +65,7 @@ export default function SignIn() {
                             onChange={(e) => { setPassword(e.target.value) }}
                         />
                         <p className='forgetPassword'>Forget Password?</p>
-                        {login ? <button>Sign In</button> : <Link onClick={(e) => signInHandler(e)} to="/profile">Sign In</Link>}
+                        <button onClick={(e) => signInHandler(e)} to="/profile" className='headerSection_signIn'>Sign In</button>
                     </form>
                 </div>
             </section>
