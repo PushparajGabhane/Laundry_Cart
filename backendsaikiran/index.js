@@ -4,7 +4,7 @@ const express=require("express")
 
 const app=express()
 
-const register=require("./router/register")
+const register=require("./router/orders")
 
 app.use(register)
 
