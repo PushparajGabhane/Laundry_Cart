@@ -1,3 +1,23 @@
-.App {
-  text-align: center;
+.td {
+  text-decoration: none;
+  list-style: none;
+}
+
+.ml {
+  margin-right: 10px;
+}
+
+.ft-lg {
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.header-section {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row-reverse;
 }
