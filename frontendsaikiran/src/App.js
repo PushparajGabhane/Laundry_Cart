@@ -5,7 +5,8 @@ import Orderselect from "./orderselect";
 import Summary from "./summary";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Orderlist from "./orderlist";
+import Sucess from "./sucess";
+
 
 function App() {
  
@@ -19,7 +20,7 @@ function App() {
           <Route path="/selectorder" element={<Orderselect />} />
           <Route path="/summary" element={<Summary />} />
           <Route path="/" element={<Createorder/>} />
-          <Route path="/orderlist" element={<Orderlist/>} />
+          <Route path="/sucess" element={<Sucess/>} />
         </Routes>
 
       </BrowserRouter>
