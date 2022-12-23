@@ -3,9 +3,81 @@ import facebook from "../asset/facebook.svg";
 import instagram from "../asset/instagram.svg";
 import linkedin from "../asset/linkedin.svg";
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Axios from 'axios';
 
 export default function Register() {
+    // useState hooks are here
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [state, setState] = useState('');
+    const [district, setDistrict] = useState('');
+    const [address, setAddress] = useState('');
+    const [pincode, setPincode] = useState('');
+    const [password, setPassword] = useState('');
+    const [check, setCheck] = useState(false);
+    const [form, setForm] = useState({});
+    // errors starts here 
+    const [emailError, setEmailError] = useState('');
+    const [phoneError, setPhoneError] = useState('');
+    const [submit, setSubmit] = useState(false)
+    // useNavigate for navigate
     const navigate = useNavigate()
+    // registerHandler to submit the form
+    const registerHandler = (e) => {
+        e.preventDefault();
+        setSubmit(true)
+    }
+    useEffect(() => {
+        if (check) {
+            if(Number(phone)){
+                setForm({
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    state: state,
+                    district: district,
+                    address: address,
+                    pincode: pincode,
+                    password: password
+                })
+            }
+        } else {
+            setForm({})
+        }
+    }, [check, name, email, phone, state, district, address, pincode, password])
+
+    useEffect(() => {
+        if (submit) {
+            if (form.name && form.email && form.phone && form.state && form.district && form.address && form.pincode && form.password) {
+                Axios.post('/register', form)
+                    .then((res) => {
+                        console.log('Registration succesfull', res.data);
+                        alert('Registration Succesfull');
+                        setTimeout(() => {
+                            navigate('/signIn')
+                        }, 3000)
+                    })
+                    .catch((err) => {
+                        console.log('resgistration failed', err.response.data);
+                        let errArr = err.response.data.errorType;
+
+                        // console.log(errArr);
+                        errArr.forEach((e, i) => {
+                            if (e === 'email') {
+                                setEmailError("* email already exists")
+                            }
+                            if (e === 'phone') {
+                                setPhoneError('* phone number already exists')
+                            }
+                        })
+                    })
+            }
+            return setSubmit(false)
+        }
+    }, [form, submit, navigate])
     return (
         <div className="register">
             <section className="headerSection">
@@ -29,26 +101,46 @@ export default function Register() {
                     <form method='post' id='Register_Form'>
                         <p className='rightBodySection_header'>REGISTER</p>
                         <div className='sameInput'>
-                            <input type="text" placeholder='Name' className='common' />
-                            <input type="text" placeholder='Email' className='common' />
+                            <input type="text" value={name} onChange={(e) => { setName(e.target.value) }} placeholder='Name' className='common' />
+                            <div>
+                                <input
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => { setEmail(e.target.value) }}
+                                    onClick={(e) => { setEmailError('') }}
+                                    placeholder='Email'
+                                    className='common'
+                                />
+                                <p className='error'>{emailError}</p>
+                            </div>
                         </div>
                         <div className='sameInput'>
-                            <input type="text" placeholder='Phone' className='common' />
-                            <input type="text" placeholder='State' className='common' />
+                            <div>
+                                <input
+                                    type="text"
+                                    value={phone}
+                                    onChange={(e) => { setPhone(e.target.value) }}
+                                    onClick={(e) => { setPhoneError('') }}
+                                    placeholder='Phone'
+                                    className='common'
+                                />
+                                <p className='error'>{phoneError}</p>
+                            </div>
+                            <input type="text" value={state} onChange={(e) => { setState(e.target.value) }} placeholder='State' className='common' />
                         </div>
                         <div className='sameInput'>
-                            <input type="text" placeholder='District' className='common' />
-                            <input type="text" placeholder='Address' className='common' />
+                            <input type="text" value={district} onChange={(e) => { setDistrict(e.target.value) }} placeholder='District' className='common' />
+                            <input type="text" value={address} onChange={(e) => { setAddress(e.target.value) }} placeholder='Address' className='common' />
                         </div>
                         <div className='sameInput'>
-                            <input type="text" placeholder='PINCODE' className='common' />
-                            <input type="password" placeholder='password' className='password' />
+                            <input type="text" value={pincode} onChange={(e) => { setPincode(e.target.value) }} placeholder='Pincode' className='common' />
+                            <input type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder='Password' className='common' />
                         </div>
                         <div className='checkBox_button'>
-                            <input type='checkbox' />
+                            <input type='checkbox' value={check} onChange={(e) => { setCheck(!check) }} />
                             <p>I agree to Terms & Condition receiving marketing and promotional materials</p>
                         </div>
-                            <button className='registerForm_signIn_button'>Register</button>
+                        <button onClick={(e) => { registerHandler(e) }} className='registerForm_signIn_button'>Register</button>
 
                     </form>
                 </div>

@@ -3,29 +3,67 @@ import facebook from "../asset/facebook.svg";
 import instagram from "../asset/instagram.svg";
 import linkedin from "../asset/linkedin.svg";
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Axios from 'axios';
 
 export default function SignIn() {
     const [email_phone, setEmail_Phone] = useState('');
     const [password, setPassword] = useState('');
     const [form, setForm] = useState({});
+    const [emailPhoneError, setEmailPhoneError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+    const navigate = useNavigate();
+
+    // signInHandler for sign in 
     const signInHandler = (e) => {
         e.preventDefault();
-        form.email_phone = email_phone;
-        form.password = password;
-        setForm(form);
-        console.log(form);
-        Axios.get('localhost:4000/signIn', form)
-            .then((res) => {
-                console.log('Sign in succesfull', res.data);
+        let phone;
+        // console.log(typeof email_phone, email_phone);
+        if(Number(email_phone)){
+            phone = Number(email_phone)
+            console.log('phone', phone);
+            setForm({
+                email_phone: phone,
+                password: password
             })
-            .catch((err) => {
-                console.log(err)
-            })
-    }
+        }else{
+            setForm({
+                email_phone: email_phone,
+                password: password
+            });
+        }
+        // console.log('Form', form);
 
-    const navigate = useNavigate();
+    }
+    useEffect(() => {
+        if (form.email_phone && form.password) {
+            Axios.post('/signIn', form)
+                .then((res) => {
+                    setPasswordError('')
+                    console.log('Sign in succesfull', res.data);
+                    alert('sign in successfull!');
+                    setTimeout(()=>{
+                        navigate('/createOrder')
+                    },2000)
+                })
+                .catch((err) => {
+                    console.log('error in sign in', err.response.data);
+                    if(err.response.data.errorType==='email'){
+                        setEmailPhoneError("* Invalid email");
+                        setPasswordError('');
+                    }
+                    if(err.response.data.errorType==='phone'){
+                        setEmailPhoneError('* Invalid Phone Number');
+                        setPasswordError('');
+                    }
+                    if(err.response.data.errorType==='password'){
+                        setPasswordError('* Invalid Password');
+                        setEmailPhoneError('');
+                    }
+                })
+        }
+    }, [form, navigate])
+
     return (
         <div className="signIn">
             <section className="headerSection">
@@ -46,24 +84,31 @@ export default function SignIn() {
                     <button className='leftBodySection_Register' onClick={(e) => { navigate('/register') }}>Register</button>
                 </div>
                 <div className="rightBodySection">
-                    <form method='/'>
+                    <form method='post'>
+
                         <p className='rightBodySection_signIn'>SIGN IN</p>
                         <input
                             type="text"
                             value={email_phone}
                             placeholder='Mobile / Email'
                             className='mobile_email'
-                            onChange={(e) => { setEmail_Phone(e.target.value) }}
+                            onChange={(e) => { setEmail_Phone(e.target.value)}}
                         />
+                        <p className='errorEmail_phone'>{emailPhoneError}</p>
+
                         <input
                             type="password"
                             value={password}
-                            placeholder='password'
+                            placeholder='Password'
                             className='password'
-                            onChange={(e) => { setPassword(e.target.value) }}
+                            onChange={(e) => { setPassword(e.target.value)}}
                         />
+                        <p className='errorEmail_phone'>{passwordError}</p>
+
                         <p className='forgetPassword'>Forget Password?</p>
-                        <button onClick={(e) => signInHandler(e)} to="/profile" className='headerSection_signIn'>Sign In</button>
+
+                        <button onClick={(e) => signInHandler(e)}>Sign In</button>
+
                     </form>
                 </div>
             </section>
