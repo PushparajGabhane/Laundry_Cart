@@ -1,0 +1,18 @@
+.td {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.sidebar-section {
+    width: 5%;
+    height: 90vh;
+    float: left;
+    background: blue;
+    color: white;
+}
+
+.more-icon{
+    background-color: white;
+    height: 30px;
+    padding-top: 8px;
+}

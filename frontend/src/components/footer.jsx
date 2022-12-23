@@ -1,10 +1,10 @@
+import "../styles/footer.css";
+function Footer() {
 
-function Footer(){
-
-    return(
-        <div>
+    return (
+        <h4 className="footerDate footer">
             2022 &copy; Laundry
-        </div>
+        </h4>
     )
 }
 

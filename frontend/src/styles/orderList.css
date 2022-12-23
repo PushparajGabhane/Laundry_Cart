@@ -1,0 +1,38 @@
+.order-section {
+    width: 94%;
+    height: 90vh;
+}
+
+.search {
+    float: right;
+}
+
+.order-section h6 {
+    padding-top: 100px;
+}
+
+.create {
+    background: blue;
+    color: white;
+    height: 40px;
+    width: 100px;
+}
+
+table {
+    text-align: center;
+    margin: auto;
+}
+
+th,
+td {
+    border: 1px solid black;
+}
+
+th {
+    background: black;
+    color: white;
+}
+
+.cancel{
+    color: red;
+}

@@ -5,7 +5,6 @@ import linkedin from "../asset/linkedin.svg";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Axios from 'axios';
-import Profile from './profile';
 
 export default function SignIn() {
     const [email_phone, setEmail_Phone] = useState('');
@@ -29,7 +28,6 @@ export default function SignIn() {
     const navigate = useNavigate();
     return (
         <div className="signIn">
-            <Profile />
             <section className="headerSection">
                 <p className="header">LAUNDRY</p>
                 <div className="buttons">

@@ -1,9 +1,15 @@
+import "../styles/orderList.css";
+import search from "../asset/SidebarImages/search.svg";
 
 function OrderList() {
 
     return (
-        <>
-            <h1>There are no orders...</h1>
+        <div className="order-section">
+            <div className="search">
+                <img src={search} alt="search" /> <input type={"text"} />
+            </div>
+            <h6>No Orders Available</h6>
+            <button className='create'>Create</button>
             <table>
                 <thead>
                     <tr>
@@ -21,20 +27,22 @@ function OrderList() {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td><button className="cancel"
+                            onClick={() => { alert("Your order is cancelled") }}
+                        >Cancel</button></td>
+                        <td>10</td>
                     </tr>
                 </tbody>
             </table>
-        </>
+        </div>
     )
 }
 
