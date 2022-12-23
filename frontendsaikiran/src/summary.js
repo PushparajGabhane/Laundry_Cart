@@ -14,16 +14,17 @@ function Summary(props) {
 
    const form=props.form
 
+
+
    const confirm = () => {
 
+      console.log(form);
 
-     
-     
-    console.log(form);
 
-    Axios.post('/selectorder', form)
+
+    Axios.post('http://localhost:4500/selectorder', form)
         .then((res) => {
-            console.log('Sign in succesfull',res.data)
+            console.log('order posted  succesfull',res.data)
         })
         .catch((err) => {
             console.log(err)
@@ -43,6 +44,7 @@ function Summary(props) {
         setSucess(true)
 
         handleClose()
+
         confirm()
     }
 
@@ -115,6 +117,9 @@ function Summary(props) {
 
                           <h4>order details</h4>
 
+
+
+
                             {
                                 props.form.map((data)=> {
 
@@ -127,9 +132,12 @@ function Summary(props) {
                                          
 
                                               <tr style={{borderBottom:"0.1px solid rgb(110, 107, 107)"}}>
+
                                                 <td> <h5>{data.product}</h5> </td>
+
                                                 <td> <h5>{data.type}</h5> </td>
-                                                <td> <h5>{data.quantity*data.washvalue}</h5> </td>
+
+                                                <td> <h5>{data.washvalue?data.quantity*data.washvalue:""}</h5> </td>
 
 
                                             </tr>
