@@ -31,7 +31,7 @@ const Createorder = () => {
 
 
 
-                <div className='sidebar'>
+                <div className='sidebar' style={{height:"500px"}}>
 
 
                 </div>
