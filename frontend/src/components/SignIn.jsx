@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
 
+
+
 export default function SignIn() {
     const [email_phone, setEmail_Phone] = useState('');
     const [password, setPassword] = useState('');
@@ -40,11 +42,12 @@ export default function SignIn() {
             Axios.post('/signIn', form)
                 .then((res) => {
                     setPasswordError('')
-                    console.log('Sign in succesfull', res.data);
+                    // console.log('Sign in succesfull', res.data);
+                    // console.log(user);
                     alert('sign in successfull!');
                     setTimeout(()=>{
-                        navigate('/createOrder')
-                    },2000)
+                        navigate('/profile')
+                    },1000)
                 })
                 .catch((err) => {
                     console.log('error in sign in', err.response.data);
@@ -62,7 +65,7 @@ export default function SignIn() {
                     }
                 })
         }
-    }, [form, navigate])
+    }, [form,navigate])
 
     return (
         <div className="signIn">
