@@ -78,26 +78,49 @@
 .sameInput {
     display: flex;
     flex-direction: row;
-    margin-bottom: 2vh;
+    margin-bottom: 5vh;
+    height: 7vh;
+    /* border: 2px solid black; */
 }
 
 .sameInput input[type=text] {
+    height: 3vh;
     font-size: 1.1rem;
     padding: 8px;
     width: 20vw;
     border: 0;
     border-bottom: 1px solid #565657;
     background-color: #B9C0FD1A;
-    margin: 0 5vw 5vh 0;
+    margin: 0 5vw 0 0;
+    letter-spacing: 1.5px;
+}
+
+.sameInput input[type=email] {
+    height: 3vh;
+    font-size: 1.1rem;
+    padding: 8px;
+    width: 20vw;
+    border: 0;
+    border-bottom: 1px solid #565657;
+    background-color: #B9C0FD1A;
+    margin: 0 5vw 0 0;
     letter-spacing: 1.5px;
 }
 
 .sameInput input[type=password] {
-    height: 3vh;
     width: 20vw;
     border: 0;
     border-bottom: 1px solid #676769;
     background-color: #B9C0FD1A;
+    height: 3vh;
+    margin: 0 0 4vh 0;
+}
+
+.error {
+    height: 1vh;
+    font-size: 0.65rem;
+    color: red;
+    font-weight: 750;
 }
 
 form button {
@@ -108,7 +131,7 @@ form button {
     border: 0;
     border-radius: 4px;
     opacity: 1;
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 10px;
     margin: 10vh 0 10vh 20vw;
 }
@@ -118,7 +141,8 @@ form button {
     flex-direction: row;
     margin-left: 6vw;
 }
-.checkBox_button p{
+
+.checkBox_button p {
     margin-left: 2vw;
     color: #4552C1;
     text-decoration: underline;

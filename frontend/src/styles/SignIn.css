@@ -79,7 +79,7 @@
     font-size: 5rem;
     color: #5861AE;
     font-weight: bolder;
-
+    
 }
 
 .leftBodySection .serviceWork {
@@ -133,10 +133,8 @@ input[type=text] {
     border: 0;
     border-bottom: 1px solid #565657;
     background-color: #B9C0FD1A;
-    margin-bottom: 5vh;
     letter-spacing: 1.5px;
 }
-
 input[type=password] {
     font-size: 1.1rem;
     padding: 8px;
@@ -145,6 +143,13 @@ input[type=password] {
     border-bottom: 1px solid #676769;
     background-color: #B9C0FD1A;
     letter-spacing: 1.5px;
+    margin: 5vh 0 0 0;
+}
+.errorEmail_phone{
+    height: 1vh;
+    font-size: 0.65rem;
+    color: red;
+    font-weight: 750;
 }
 
 .forgetPassword {
@@ -175,7 +180,7 @@ input[type=password] {
     background-color: #F8F9FF;
     box-shadow: 0px -3px 6px #0000000B;
     opacity: 1;
-    padding: 1vh 0 1vh 29vw;
+    padding: 1vh 0 1vh 29vw ;
 }
 
 .referSection .referal {
@@ -188,7 +193,7 @@ input[type=password] {
 
 .referSection .terms {
     font-size: 0.7rem;
-    margin: 0 0 1vh 10vw;
+    margin:0 0 1vh 10vw;
 }
 
 .aboutUs {
@@ -258,13 +263,4 @@ h3 {
     flex-direction: row;
     color: #707070;
     margin: 0.5vh 0 0 40vw;
-}
-
-.bg-blue {
-    background: blue;
-    color: white;
-    width: 113px;
-    height: 80px;
-    border: 0.5px solid rgb(121, 119, 119);
-    font-size: 1.05rem;
 }

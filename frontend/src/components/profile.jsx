@@ -3,8 +3,8 @@ import Header from "./header";
 import OrderList from "./orderList";
 import SideBar from "./sidebar";
 
-export default function Profile(props) {
-console.log(props.name);
+export default function Profile() {
+
     return (<>
         <Header />
         <div>

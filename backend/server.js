@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 
 // Database Connection
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', true);
+
 mongoose.connect(process.env.LOCAL_DATABASE, { useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.connection.once('open', () =>{
@@ -14,21 +16,19 @@ mongoose.connection.once('open', () =>{
 }).on('connectionError',(err) =>{
     console.log(err);
 })
-
 // Middlewares
-app.use(express.urlencoded());
 app.use(cors())
 
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Connecting with mongoDB
 
 
 // PORT
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 6000;
 //Importing Routes here
 const authRoute = require('./routes/auth/authRoute');
 app.use('/', authRoute);

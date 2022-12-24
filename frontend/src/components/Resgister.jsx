@@ -3,98 +3,138 @@ import facebook from "../asset/facebook.svg";
 import instagram from "../asset/instagram.svg";
 import linkedin from "../asset/linkedin.svg";
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Axios from 'axios';
 
 export default function Register() {
+    // useState hooks are here
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [state, setState] = useState('');
+    const [district, setDistrict] = useState('');
+    const [address, setAddress] = useState('');
+    const [pincode, setPincode] = useState('');
+    const [password, setPassword] = useState('');
+    const [check, setCheck] = useState(false);
+    const [form, setForm] = useState({});
+    // errors starts here 
+    const [emailError, setEmailError] = useState('');
+    const [phoneError, setPhoneError] = useState('');
+    const [submit, setSubmit] = useState(false)
+    // useNavigate for navigate
     const navigate = useNavigate()
-    return (<>
-        <div className="register">
-            <section className="headerSection">
-                <p className="header">LAUNDRY</p>
-                <div className="buttons">
-                    <button className='same'>Home</button>
-                    <button className='same'>Pricing</button>
-                    <button className='same'>Career</button>
-                    <button className='headerSection_signIn'>Sign In</button>
-                </div>
-            </section>
-            <section className="registerBodySection">
-                <div className="register_LeftBodySection">
-                    <p className='laundry'>Laundry</p>
-                    <p className='service'>Service</p>
-                    <p className='serviceWork'>Doorstep Wash & Dryclean service</p>
-                    <p className='noAccount'>Already Have Account</p>
-                    <button className='leftBodySection_Register' onClick={(e) => { navigate('/signIn') }}>Sign In</button>
-                </div>
-                <div className="register_RightBodySection">
+    return (
+        <>
+            <div className="register">
+                <section className="headerSection">
+                    <p className="header">LAUNDRY</p>
+                    <div className="buttons">
+                        <button className='same'>Home</button>
+                        <button className='same'>Pricing</button>
+                        <button className='same'>Career</button>
+                        <button className='headerSection_signIn'>Sign In</button>
+                    </div>
+                </section>
+                <section className="registerBodySection">
+                    <div className="register_LeftBodySection">
+                        <p className='laundry'>Laundry</p>
+                        <p className='service'>Service</p>
+                        <p className='serviceWork'>Doorstep Wash & Dryclean service</p>
+                        <p className='noAccount'>Already Have Account</p>
+                        <button className='leftBodySection_Register' onClick={(e) => { navigate('/signIn') }}>Sign In</button>
+                    </div>
+                    <div className="register_RightBodySection">
 
-                    <form method='post' id='Register_Form' action='http://localhost:5000/register'>
+                        <form method='post' id='Register_Form' action='http://localhost:5000/register'>
 
-                        <p className='rightBodySection_header'>REGISTER</p>
-                        <div className='sameInput'>
-                            <input type="text" placeholder='Name' className='common' />
-                            <input type="text" placeholder='Email' className='common' />
-                        </div>
-                        <div className='sameInput'>
-                            <input type="text" placeholder='Phone' className='common' />
-                            <input type="text" placeholder='State' className='common' />
-                        </div>
-                        <div className='sameInput'>
-                            <input type="text" placeholder='District' className='common' />
-                            <input type="text" placeholder='Address' className='common' />
-                        </div>
-                        <div className='sameInput'>
-                            <input type="text" placeholder='Pincode' className='common' />
-                            <input type="password" placeholder='Password' className='password' />
-                        </div>
-                        <div className='checkBox_button'>
-                            <input type='checkbox' />
-                            <p>I agree to Terms & Condition receiving marketing and promotional materials</p>
-                        </div>
-                        <button className='registerForm_signIn_button'>Register</button>
+                            <p className='rightBodySection_header'>REGISTER</p>
+                            <div className='sameInput'>
+                                <input type="text" value={name} onChange={(e) => { setName(e.target.value) }} placeholder='Name' className='common' />
+                                <div>
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => { setEmail(e.target.value) }}
+                                        onClick={(e) => { setEmailError('') }}
+                                        placeholder='Email'
+                                        className='common'
+                                    />
+                                    <p className='error'>{emailError}</p>
+                                </div>
+                            </div>
+                            <div className='sameInput'>
+                                <div>
+                                    <input
+                                        type="text"
+                                        value={phone}
+                                        onChange={(e) => { setPhone(e.target.value) }}
+                                        onClick={(e) => { setPhoneError('') }}
+                                        placeholder='Phone'
+                                        className='common'
+                                    />
+                                    <p className='error'>{phoneError}</p>
+                                </div>
+                                <input type="text" value={state} onChange={(e) => { setState(e.target.value) }} placeholder='State' className='common' />
+                            </div>
+                            <div className='sameInput'>
+                                <input type="text" value={district} onChange={(e) => { setDistrict(e.target.value) }} placeholder='District' className='common' />
+                                <input type="text" value={address} onChange={(e) => { setAddress(e.target.value) }} placeholder='Address' className='common' />
+                            </div>
+                            <div className='sameInput'>
+                                <input type="text" placeholder='PINCODE' className='common' />
+                                <input type="password" placeholder='password' className='password' />
+                            </div>
+                            <div className='checkBox_button'>
+                                <input type='checkbox' value={check} onChange={(e) => { setCheck(!check) }} />
+                                <p>I agree to Terms & Condition receiving marketing and promotional materials</p>
+                            </div>
+                            <button className='registerForm_signIn_button'>Register</button>
 
-                    </form>
-                </div>
-            </section>
-            <section className="bottomSection">
-                <div className="referSection">
-                    <p className="referal">Now Refer & Earn <i className="fa fa-inr"> 500</i> for every refferal*</p>
-                    <p className='terms'>*Terms and conditions will be applied</p>
-                </div>
-                <div className="aboutUs">
-                    <div className="about_us">
-                        <h3>ABOUT US</h3>
-                        <p>Doorstep Wash & Dryclean Service</p>
+                        </form>
                     </div>
-                    <div className="home">
-                        <h3>Home</h3>
-                        <p>Sign In</p>
-                        <p>Register</p>
+                </section>
+                <section className="bottomSection">
+                    <div className="referSection">
+                        <p className="referal">Now Refer & Earn <i className="fa fa-inr"> 500</i> for every refferal*</p>
+                        <p className='terms'>*Terms and conditions will be applied</p>
                     </div>
-                    <div className="pricing">
-                        <h3>Pricing</h3>
-                    </div>
-                    <div className="career">
-                        <h3>Career</h3>
-                        <p>Blogs</p>
-                        <p>Create</p>
-                    </div>
-                    <div className="contact">
-                        <h3>Contact</h3>
-                    </div>
-                    <div className="social_media">
-                        <h3>SOCIAL MEDIA</h3>
-                        <div className="socialMediaIcons">
-                            <img src={facebook} alt="facebook" />
-                            <img src={instagram} alt="instagram" />
-                            <img src={linkedin} alt="linkedin" />
+                    <div className="aboutUs">
+                        <div className="about_us">
+                            <h3>ABOUT US</h3>
+                            <p>Doorstep Wash & Dryclean Service</p>
+                        </div>
+                        <div className="home">
+                            <h3>Home</h3>
+                            <p>Sign In</p>
+                            <p>Register</p>
+                        </div>
+                        <div className="pricing">
+                            <h3>Pricing</h3>
+                        </div>
+                        <div className="career">
+                            <h3>Career</h3>
+                            <p>Blogs</p>
+                            <p>Create</p>
+                        </div>
+                        <div className="contact">
+                            <h3>Contact</h3>
+                        </div>
+                        <div className="social_media">
+                            <h3>SOCIAL MEDIA</h3>
+                            <div className="socialMediaIcons">
+                                <img src={facebook} alt="facebook" />
+                                <img src={instagram} alt="instagram" />
+                                <img src={linkedin} alt="linkedin" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='footerDate'>
-                    <h3>2022 @ Laundry</h3>
-                </div>
-            </section>
-        </div>
-    </>
+                    <div className='footerDate'>
+                        <h3>2022 @ Laundry</h3>
+                    </div>
+                </section>
+            </div>
+        </>
     )
 }
