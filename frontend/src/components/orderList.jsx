@@ -8,8 +8,12 @@ function OrderList() {
             <div className="search">
                 <img src={search} alt="search" /> <input type={"text"} />
             </div>
-            <h6>No Orders Available</h6>
-            <button className='create'>Create</button>
+
+            <div className="tc">
+                <h6>No Orders Available</h6>
+                <button className='create'>Create</button>
+            </div>
+
             <table>
                 <thead>
                     <tr>

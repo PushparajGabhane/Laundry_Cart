@@ -16,7 +16,10 @@ export default function SignIn() {
         form.password = password;
         setForm(form);
         console.log(form);
-        Axios.get('localhost:4000/signIn', form)
+        fetch('http://localhost:5000/signIn', {
+            method: "GET",
+            body: form
+        })
             .then((res) => {
                 console.log('Sign in succesfull', res.data);
             })

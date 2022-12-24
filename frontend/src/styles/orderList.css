@@ -7,7 +7,11 @@
     float: right;
 }
 
-.order-section h6 {
+.tc {
+    text-align: center;
+}
+
+.tc h6 {
     padding-top: 100px;
 }
 
@@ -16,6 +20,7 @@
     color: white;
     height: 40px;
     width: 100px;
+
 }
 
 table {
@@ -33,6 +38,6 @@ th {
     color: white;
 }
 
-.cancel{
+.cancel {
     color: red;
 }

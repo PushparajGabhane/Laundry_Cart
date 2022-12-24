@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
     const navigate = useNavigate()
-    return (
+    return (<>
         <div className="register">
             <section className="headerSection">
                 <p className="header">LAUNDRY</p>
@@ -26,7 +26,9 @@ export default function Register() {
                     <button className='leftBodySection_Register' onClick={(e) => { navigate('/signIn') }}>Sign In</button>
                 </div>
                 <div className="register_RightBodySection">
-                    <form method='post' id='Register_Form'>
+
+                    <form method='post' id='Register_Form' action='http://localhost:5000/register'>
+
                         <p className='rightBodySection_header'>REGISTER</p>
                         <div className='sameInput'>
                             <input type="text" placeholder='Name' className='common' />
@@ -41,14 +43,14 @@ export default function Register() {
                             <input type="text" placeholder='Address' className='common' />
                         </div>
                         <div className='sameInput'>
-                            <input type="text" placeholder='PINCODE' className='common' />
-                            <input type="password" placeholder='password' className='password' />
+                            <input type="text" placeholder='Pincode' className='common' />
+                            <input type="password" placeholder='Password' className='password' />
                         </div>
                         <div className='checkBox_button'>
                             <input type='checkbox' />
                             <p>I agree to Terms & Condition receiving marketing and promotional materials</p>
                         </div>
-                            <button className='registerForm_signIn_button'>Register</button>
+                        <button className='registerForm_signIn_button'>Register</button>
 
                     </form>
                 </div>
@@ -93,5 +95,6 @@ export default function Register() {
                 </div>
             </section>
         </div>
+    </>
     )
 }
